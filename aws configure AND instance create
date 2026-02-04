@@ -1,0 +1,20 @@
+************** AWS CONFIGURE********************
+VIM provider.tf
+
+provider "aws" {
+  region     = "us-west-1"
+  access_key = "ACCESS-KEY"
+  secret_key = "SECRET-KEY"
+}
+
+*******terraform to in only instance launch*********************
+ VIM main.tf
+
+resource "aws_instance" "devanand" {
+    ami = "ami-0290e60ec230db1e4"
+    instance_type = "t3.micro"
+    key_name = "deva"
+     tags = {
+        Name = "cdec-b2"
+     }
+}
